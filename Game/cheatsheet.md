@@ -1,3 +1,49 @@
+Notes from Charles
+==================
+Below issome hints from me of some techniques I used for doing this. The rest of this cheatsheet is super helpful also.
+Remember to *think* like an investigator when you're doing this!
+Good luck!
+
+*Additional hint*
+To a read a specific line in a file or a range of lines in file you can use:
+- `sed`
+- `awk`
+- `head`
+- `tail`
+- and the pipe sybol `|`
+  - Extra details: The pipe symbol represented as `|` is used to "pipe" the output from one command as the input of another command.  
+  ex: `head -n 20 people | tail -n 5`  
+  This command will read the first 20 lines of the `people` file and then use `tail` to finally display the last 5 lines froathat set of 20 lines
+
+Example with sed:
+This command will print line 233 of `<filename>`. The `-n` says to suppress deault output. The `233p` says to print the line.
+`sed -n '223p' <filename>`
+
+Example with awk:
+awk is often used for filtering/formating output from commands but in this case it can be used to print line number 223.
+the `'NR==223'` says tp print "record number (NR)" 223 which is equivalent of printing that line number.
+`awk 'NR==223' <filename>`
+
+You can also use grep to find a specific line in a file and then print a certain number of lines after the matched pattern.
+Example with grep:
+This example will look through `<filename>` for each found-matching-pattern of `somePattern`, then it will print that line and 5 lines after the match.
+Take note that sometimes it does require some experimentation to get the right command to give you what you're looking for.
+`grep -A 5 'somePattern' <filename>`
+
+Additional example with grep:
+This will do the same as before except further filter the output from the original command and "pipe" it into another grep command that will
+look for `anotherPatternWithinThePreviousOutput` in the piped output and show the matched line as well as 2 lines after that match and 3 lines before the match.
+`grep -A 5 "somePattern" <filename> | grep -A 2 -B 3 "anotherPatternWithinThePreviousOutput"`
+``
+
+**Common Grep command**
+This will print out `<somefile>` and filter for the lines matching `somePatternYouAreLookingFor`.
+`cat <somefile> | grep "somePatternYouAreLookingFor"`
+
+Always remember that you can use `man grep` or `man awk` or `man sed`, etc. to get the manual pages for that command. You can also use google and other resources as well.
+
+
+
 Playing with text on the command line
 =====================================
 
