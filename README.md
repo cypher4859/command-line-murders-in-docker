@@ -34,7 +34,7 @@ There's been a murder in Terminal City, and TCPD needs your help.
 
 To figure out whodunit, you need access to a command line.
 
-Once you're ready, pull the `cypher4859/command-line-murders:latest` image and run `docker container run -it /bin/bash`.
+Once you're ready, pull the `cypher4859/command-line-murders:latest` image and run with `docker container run -it cypher4859/command-line-murders:latest /bin/bash`.
 
 You should hve a Terminal; Go to the location of the files, and start by reading the file 'instructions'.
 

@@ -1,3 +1,8 @@
+## Command Line Murders in Docker
+Below you'll find the instructions for Command Line Murders, a popular DevOps styled interview question. To get started please pull the `cypher4859/command-line-murders:latest` image, and run a container of this image with `/bin/bash` interactively. Once inside the container you can start by reading the file 'instructions' that you find there.
+
+Also, Don't use a text editor to view any files except these instructions, the cheatsheet, and hints. By using a text editor you'll discover that the data you're looking at is a mess. Text editors would include vscode, vim, vi, less, nano. There are other ways to do so by following the hints.
+
 The Command Line Murders
 ========================
 
@@ -29,9 +34,9 @@ There's been a murder in Terminal City, and TCPD needs your help.
 
 To figure out whodunit, you need access to a command line.
 
-Once you're ready, run a docker container using `docker run -it cypher4859/command-line-murders:latest /bin/bash`
+Once you're ready, pull the `cypher4859/command-line-murders:latest` image and run with `docker container run -it cypher4859/command-line-murders:latest /bin/bash`.
 
-You should have a Terminal, and be in the `/Game` directory. You can start by reading the file 'instructions'.
+You should hve a Terminal; Go to the location of the files, and start by reading the file 'instructions'.
 
 One way you can do this is with the command:
 
